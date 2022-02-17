@@ -1,0 +1,130 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html {
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+}
+
+input, button {
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+}
+input::placeholder {
+    color: rgb(156, 156, 156);
+}
+
+header, main {
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+header h1 {
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: rgb(49, 49, 49);
+    margin: 20px 0;
+}
+.new-form {
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+}
+
+#new-task {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #0066b2;
+    cursor: pointer;
+}
+/* #new-task:hover {
+    color: rgb(110, 212, 212);
+    transition: all 0.5s 0s ease;
+}
+#new-task:not(:hover) {
+    transition: all 0.5s 0s ease;
+} */
+
+
+main h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 15px 0;
+    color: rgb(49, 49, 49);
+}
+.container {
+    background: white;
+    box-shadow: 1px 1px 5px rgb(233, 230, 230);
+    border-radius: 5px;
+}
+
+.content-task {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-bottom: 0.3px solid rgb(235, 231, 231);
+}
+.new-task {
+    width: 79%;
+    font-size: 1.6rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 1px solid rgb(180, 178, 178);
+    background: white;
+    color: rgb(49, 49, 49);
+    border-radius: 50px;
+    margin-right: 3px;
+}
+.text-task {
+    display: flex;
+    align-items: center;
+    width: 65%;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: rgb(49, 49, 49);
+}
+.text-task::placeholder {
+    color: rgb(156, 156, 156);
+}
+
+.edit {
+    font-size: 1.6rem;
+    font-weight: 700;
+    padding: 10px 15px;
+    color: rgb(156, 156, 156);
+    cursor: pointer;
+}
+.edit:hover {
+    color: #0066b2;
+    transition: all 0.5s 0s ease;
+}
+/* .edit:not(:hover) {
+    transition: all 0.5s 0s ease;
+} */
+
+.delete {
+    width: 50px;
+    font-weight: 700;
+    padding: 10px 15px;
+    cursor: pointer;
+    
+}
+
+.empty {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: rgb(49, 49, 49);
+}
+
