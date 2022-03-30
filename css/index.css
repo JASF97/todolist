@@ -11,6 +11,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
+    height: 100%;
     margin: 0 auto;
 }
 
@@ -24,8 +25,12 @@ input::placeholder {
     color: rgb(156, 156, 156);
 }
 
+main {
+    height: 100%;
+    min-height: 56vh;
+}
 header, main {
-    width: 80%;
+    width: 90%;
     max-width: 800px;
     margin: 0 auto;
 }
@@ -37,7 +42,7 @@ header h1 {
 }
 .new-form {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     margin: 10px auto;
 }
 
@@ -70,15 +75,14 @@ main h2 {
 
 .content-task {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     width: 100%;
     padding: 15px;
     margin-bottom: 10px;
-    border-bottom: 0.3px solid rgb(235, 231, 231);
 }
 .new-task {
-    width: 79%;
-    font-size: 1.6rem;
+    width: 78%;
+    font-size: 1.4rem;
     font-weight: bold;
     padding: 10px 20px;
     border: 1px solid rgb(180, 178, 178);
@@ -91,8 +95,8 @@ main h2 {
     display: flex;
     align-items: center;
     width: 65%;
-    font-size: 1.8rem;
-    font-weight: bold;
+    font-size: 1.4rem;
+    font-weight: 500;
     color: rgb(49, 49, 49);
 }
 .text-task::placeholder {
@@ -100,9 +104,9 @@ main h2 {
 }
 
 .edit {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: 700;
-    padding: 10px 15px;
+    padding: 5px 10px;
     color: rgb(156, 156, 156);
     cursor: pointer;
 }
@@ -110,14 +114,14 @@ main h2 {
     color: #0066b2;
     transition: all 0.5s 0s ease;
 }
-/* .edit:not(:hover) {
+/*.edit:not(:hover) {
     transition: all 0.5s 0s ease;
 } */
 
 .delete {
-    width: 50px;
+    width: 35px;
     font-weight: 700;
-    padding: 10px 15px;
+    padding: 5px 10px;
     cursor: pointer;
     
 }
@@ -128,3 +132,30 @@ main h2 {
     color: rgb(49, 49, 49);
 }
 
+footer {
+    margin-top: 35px;
+}
+footer div {
+    width: 100%;
+    height: 100px;
+    background-image: url("../icons/30.png"), linear-gradient(237deg, #46b3ff 0%, #0752fe 100%);
+    background-size: contain;
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+
+@media (min-width: 350px) {
+    footer div {
+        display: none;
+    }
+}
+
+@media (min-width: 700px) {
+    .new-task {
+        width: 90%;
+    }
+    .text-task {
+        width: 80%;
+    }
+}

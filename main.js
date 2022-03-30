@@ -10,8 +10,22 @@ window.addEventListener('DOMContentLoaded', () => {
 
     empty.innerHTML = "No tienes tareas por hacer"
  
-    
-    // eventListenersStorage ()
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const task = input.value;
+        
+
+        if (!task) {
+            alert("Ingrese una tarea");  
+            return
+        } else {           
+            listTask(task)
+        }
+
+        
+    })
     
     // function eventListenersStorage () {
     //     document.addEventListener('DOMContentLoaded', () => {
@@ -33,35 +47,10 @@ window.addEventListener('DOMContentLoaded', () => {
         }
         listArrays.push(task)
         localStorage.setItem("tasks", JSON.stringify(listArrays))
+
     }
     
-    function editTask (i, edit) {
-        edit.addEventListener('click', () => {
-
-            if (edit.innerHTML == "Editar") {
-                i.removeAttribute('readonly')
-                i.focus()
-                edit.innerText = "save"
-                
-            } else {
-                i.setAttribute('readonly', 'readonly')
-                edit.innerHTML = "Editar"
-            }
-        })
-    }
     
-    function deleteTask (delet, newTask) {
-        delet.addEventListener('click', (e) => {
-
-            const item = e.target.parentElement
-            newTask.removeChild(item)
-
-            if (newTask.innerHTML === "") {
-                empty.style.display = "block"
-            }
-
-        })
-    }
 
     function listTask(task) {
 
@@ -97,24 +86,42 @@ window.addEventListener('DOMContentLoaded', () => {
 
         input.value = ""
 
-        deleteTask (delet, newTask, )
+        
+        deleteTask (delet, newTask)
         editTask (i, edit)
         eventListenersStorage(task)
+        
     }
 
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
+    function editTask (i, edit) {
+        edit.addEventListener('click', () => {
 
-        const task = input.value;
+            if (edit.innerHTML == "Editar") {
+                i.removeAttribute('readonly')
+                i.focus()
+                edit.innerText = "save"
+                
+            } else {
+                i.setAttribute('readonly', 'readonly')
+                edit.innerHTML = "Editar"
+            }
+        })
+    }
+    
+    function deleteTask (delet, newTask) {
+        delet.addEventListener('click', (e) => {
 
+            const item = e.target.parentElement
+            newTask.removeChild(item)
 
-        if (!task) {
-            alert("Ingrese una tarea");  
-            return
-        } else {
-            listTask(task)
-        }
-    })
+            if (newTask.innerHTML === "") {
+                empty.style.display = "block"
+            }
+
+        })
+    }
+
+    
     
 })
 
